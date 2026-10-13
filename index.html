@@ -5,6 +5,299 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shourya sahu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #0b0f19;
+            font-family: sans-serif;
+            color: #d1d5db;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .main-container{
+            display: grid;
+            max-width: 1250px;
+            grid-template-columns: 320px 1fr;
+            gap: 30px;
+            padding: 40px 20px;
+            margin: auto;
+        }
+        .siderbar{
+            height: fit-content;
+            background-color: #111827;
+            border-radius: 16px;
+            position: sticky;
+            top: 40px;
+            padding-bottom: 20px;
+        }
+        .main-content{
+            height: auto;
+            width: 850px;
+            background-color: #1e293b;
+            border-radius: 16px;
+        }
+        .profile{
+            text-align: center;
+        }
+        .img1{
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            border: 1px solid #3a3a3a;
+            margin-top: 20px;
+        }
+        .profile h2{
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #e0e0e0;
+        }
+        .profile p{
+            background-color: #1e1e1e;
+            padding: 5px 15px;
+            color: #FFBF00;
+            border: 1px solid #3a3a3a;
+            font-size: 0.8rem;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        /* contact */
+        .contact{
+            margin-top: 30px;
+            border-top: 2px solid #3a3a3a;
+            padding-top: 20px;
+            margin-left: 0px;
+        }
+        .em{
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: #a0a0a0;
+        }
+        .value{
+            color: #e0e0e0;
+            text-decoration: none;
+        }
+        .email, .phone, .location{
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .soical-media{
+            border-top: 2px solid #3a3a3a;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .img2, .img3, .img4{
+            margin-top: 20px;
+            height: 24px;
+            width: 24px;
+            filter: grayscale(1) invert(0.7);
+            transition: filter 0.3s ease;
+        }
+        .img2:hover, .img3:hover, .img4:hover{
+            filter: grayscale(0) invert(0);
+        }
+        /* Navigation Bar */
+        #nevbar{
+            padding: 30px 20px;
+            border-bottom: 2px solid #3a3a3a;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        nav{
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        nav a{
+            text-decoration: none;
+            color: #3b82f6;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .active, nav a:hover{
+            color: #FFBF00;
+        }
+        #about-me{
+            padding: 20px;
+            margin-left: 20px;
+            margin-right: 5px;
+        }
+        .heading1{
+            color: #e0e0e0;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .line{
+            width: 130px;
+            height: 5px;
+            background-color: #60a5fa;
+            margin-bottom: 20px;
+        }
+        .information{
+            text-align: justify;
+        }
+        #skill{
+            padding: 20px;
+            margin-left: 20px;
+        }
+        /* Skill section */
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .item{
+            padding: 20px;
+            width: 160px;
+            height: 160px;
+            border-radius: 10px;
+            border: 2px solid #3a3a3a;
+            background-color: #1e1e1e;
+            margin: 0px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .item img{
+            height: 48px;
+            width: 48px;
+            margin-bottom: 15px;
+        }
+        .item h3{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .item:hover{
+            transform: scale(1.1);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        }
+        /* Education */
+        #ed{
+            margin-left: 20px;
+            padding: 20px;
+        }
+        .edtech{
+            position: relative;
+            margin-top: 40px;
+        }
+        .year{
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .degree{
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .college{
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .work{
+            color: #937ada;
+        }
+        .edfirst, .edsecond, .edthird{
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .circle{
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            border: 3px solid #e0e0e0;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+        }
+        .liner{
+            position: absolute;
+            width: 2px;
+            top: 0px;
+            bottom: 0px;
+            left: 2px;
+            border: 1px dotted #dac6c6;
+        }
+        /* Portfolio */
+        #certificate{
+            margin-left: 20px;
+            padding: 20px;
+        }
+        .certificate-container{
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .certificate-list{
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            border: 1px solid #3a3a3a;
+            overflow: hidden;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+        .certificate-list:hover{
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        }
+        .certificate-list img{
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .card{
+            padding: 20px;
+        }
+        .card h3{
+            color: #e0e0e0;
+            margin-bottom: 10px;
+        }
+        .card p{
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        .card span{
+            background-color: rgba(225, 191, 0, 0.1);
+            color: #FFBF00;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+        /* ================= RESPONSIVE MEDIA QUERIES ================= */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 280px 1fr;
+                gap: 20px;
+                padding: 20px 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            .siderbar {
+                position: relative;
+                top: 0;
+                height: auto;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+            .heading1, #ed h2, #certificate h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="main-container">
@@ -40,7 +333,6 @@
             </div>
         </div>
         
-        
         <!-- main-content-->
         <div class="main-content">
             <!--nevbar-->
@@ -51,7 +343,6 @@
                     <a href="#ed">Education</a>
                     <a href="#certificate">Certificate</a>
                 </nav>
-
             </div>
             <!--About me-->
             <div id="about-me">
@@ -62,7 +353,6 @@
                 <p class="information">I recently wrapped up my Class 12th CBSE exams in 2026 and took an exciting step forward by joining Atal Bihari Vajpayee University for a B.Sc. in Mathematics and Computer Science.</p>
                 <br>
                 <p class="information">Ever since I got into coding, I’ve been fascinated by how technology works under the hood. Right now, I have hands-on experience with HTML, CSS, JavaScript, and C, and I'm always looking forward to learning more, collaborating on cool projects, and building things for the web.</p>
-
             </div>
             <!--skill-->
             <div id="skill">
@@ -106,7 +396,6 @@
                         <h3 class="degree">B.Sc. in Mathematics and Computer Science </h3>
                         <p class="college">Atal Bihari Vajpayee University</p>
                         <p class="work">Focusing on core computer science fundamentals, programming, mathematics, and web development. Gaining hands-on experience with HTML, CSS, JavaScript, and C, while actively building projects and learning technology under the hood.</p>
-                        <div class="circle"></div>
                     </div>
                     <div class="edthird">
                         <div class="circle"></div>
@@ -122,7 +411,7 @@
                 <div class="line"></div>
                 <div class="certificate-container">
                     <div class="certificate-list">
-                        <img src="html_cert.jpg">
+                        <img src="html_cert.jpg" alt="HTML Certificate">
                         <div class="card">
                             <h3>Introduction of HTML</h3>
                             <p>Learned foundational web development skills, including structuring web pages with semantic HTML.</p>
@@ -130,7 +419,7 @@
                         </div>
                     </div>
                     <div class="certificate-list">
-                        <img src="css_cert.jpg">
+                        <img src="css_cert.jpg" alt="CSS Certificate">
                         <div class="card">
                             <h3>Introduction of CSS</h3>
                             <p>Learned core styling concepts, including layout design, color theory, and responsive web principles.</p>
@@ -138,7 +427,7 @@
                         </div>
                     </div>
                     <div class="certificate-list">
-                        <img src="c_cert.jpg">
+                        <img src="c_cert.jpg" alt="C Certificate">
                         <div class="card">
                             <h3>C Programming Basics</h3>
                             <p>Learned foundational programming concepts, including syntax, control structures, loops, and functions.</p>
@@ -147,10 +436,7 @@
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
         </div>
     </div>
 </body>
 </html>
-
